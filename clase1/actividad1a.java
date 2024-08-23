@@ -14,9 +14,9 @@ public class actividad1a {
 
         System.out.println(maxi); //1
         //listo
-        
-        //1+1+1+2(n+1)+n+2n+n+1
-        //4+2n+2+4n
-        //6n+6
+
+        //f(n)= 1+1+1+2(n+1)+n+2n+n+1
+        //f(n)= 4+2n+2+4n
+        //f(n)= 6n+6
     }
 }
