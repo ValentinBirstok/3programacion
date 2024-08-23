@@ -13,6 +13,6 @@ public class actividad1a {
         }
 
         System.out.println(maxi); //1
-
+        //listo
     }
 }
