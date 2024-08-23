@@ -1,10 +1,11 @@
 package clase1;
 import java.math.BigInteger;
+
 public class actividad2 {
     public static void main(String[] args) {
         long numerolong= 1233123232;
         long otronum=87654563;
-        long resultado= numerolong=otronum;
+        long resultado= numerolong+otronum;
 
         System.out.println("resultado del long: "+resultado);
 
@@ -19,3 +20,4 @@ public class actividad2 {
 //para operar en valores tipos long se usan los operadores aritméticos.
 //mientras que el biginteger maneja números mas grandes del rango del long.
 //para hacer la suma en el caso de big integer, al ser los números objetos, se usa el metodo add().
+
