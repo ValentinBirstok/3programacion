@@ -10,7 +10,7 @@ public class actividad1b {
         Cliente numero2=new Cliente(600, "Sebastián");
         Cliente numero3=new Cliente(213, "Jorge");
 
-        List<Cliente> clientes=new ArrayList<>();
+        List<Cliente> clientes=new ArrayList<>(); //creamos listas
         clientes.add(numero1);
         clientes.add(numero2);
         clientes.add(numero3);
@@ -36,10 +36,7 @@ public class actividad1b {
             resultados.add(new Resultado(cliente.getId(),cliente.getNombre() , sumaimportes));
         }
         return resultados;
-    }
-        
-      
-    }
+    }}
     class Cliente{
         int id;
         String nombre;
@@ -52,9 +49,7 @@ public class actividad1b {
         }
         public String getNombre() {
             return nombre;
-        }
-    }
-
+        }}
     class Resultado {
         private int idCliente;
         private String nombreCliente;
@@ -63,14 +58,9 @@ public class actividad1b {
         public Resultado(int idCliente,String nombrecliente,double sumaimportes){
             this.idCliente=idCliente;
             this.nombreCliente=nombrecliente;
-            this.sumaImportes=sumaimportes;
-        }
+            this.sumaImportes=sumaimportes;}
         @Override
         public String toString(){
-            return "resultado= idcliente= "+idCliente+", nombrecliente= "+nombreCliente+", sumaimportes= "+sumaImportes+" ";
-        }
-    
-        
-    }
+            return "resultado= idcliente= "+idCliente+", nombrecliente= "+nombreCliente+", sumaimportes= "+sumaImportes+" ";}}
     
 
