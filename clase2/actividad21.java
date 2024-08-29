@@ -10,7 +10,7 @@ class TreeNode {
     }
 }
 
-public class BinarySearchTree {
+public class actividad21 {
 
     // Método para buscar un valor en el BST
     public TreeNode searchBST(TreeNode root, int x) {
@@ -38,7 +38,7 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
+        actividad21 tree = new actividad21();
 
         // Crear un árbol de ejemplo
         TreeNode root = new TreeNode(10);
