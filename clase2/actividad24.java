@@ -53,6 +53,23 @@ public class actividad24 {
             arreglo[k++] = derecha[j++];
         }
     }
+    public static void main(String[] args) {
+        int[] arreglo = {34, 7, 23, 32, 5, 62}; // Arreglo de ejemplo
 
+        System.out.println("Arreglo original:");
+        for (int num : arreglo) {
+            System.out.print(num + " ");
+        }
+
+        // Llamada al método MergeSort
+        mergeSort(arreglo);
+
+        System.out.println("\nArreglo ordenado:");
+        for (int num : arreglo) {
+            System.out.print(num + " ");
+        }
+    }
 }
+
+
 
