@@ -6,7 +6,7 @@ public class actividad31 {
         String[] nombreclientes={"juan","martin","alberto","jose","matias"};
         int[] scoringclientes={10,8,13,4,9};
         int scoremaximo=scoremaximo(scoringclientes);
-        System.out.println(scoremaximo);
+        System.out.println(scoremaximo(scoringclientes));
 
         for(int i=0;i<scoringclientes.length;i++){
             if (scoremaximo==scoringclientes[i]){
@@ -28,6 +28,11 @@ public class actividad31 {
         return Math.max(izq, der);  // Devuelve el máximo de los dos
     
     }
+    //analisis de recurrencia sin cálculos matemáticos
+    //caso base ==> T(1) = C
+    //paso inductivo ==> T(2) = 2T(1) + C (hace 2 veces el caso base + el trabajo que es constante)
+     
+
     
 
 }
