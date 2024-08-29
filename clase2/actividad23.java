@@ -2,6 +2,7 @@ package clase2;
 
 public class actividad23 {
 
+
     // Método para realizar el ordenamiento QuickSort
     public static void quickSort(int[] arreglo, int bajo, int alto) {
         if (bajo < alto) {
@@ -37,5 +38,24 @@ public class actividad23 {
 
         return i + 1; // Retorna el índice de la partición
     }
+    
+    public static void main(String[] args) {
+        int[] arreglo = {34, 7, 23, 32, 5, 62}; // Arreglo de ejemplo
 
+        System.out.println("Arreglo original:");
+        for (int num : arreglo) {
+            System.out.print(num + " ");
+        }
+
+        // Llamada al método QuickSort
+        quickSort(arreglo, 0, arreglo.length - 1);
+
+        System.out.println("\nArreglo ordenado:");
+        for (int num : arreglo) {
+            System.out.print(num + " ");
+        }
+    }
 }
+    
+
+
