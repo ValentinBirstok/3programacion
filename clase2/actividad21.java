@@ -47,7 +47,7 @@ public class actividad21 {
         root.left.left = new TreeNode(3);
         root.left.right = new TreeNode(7);
         root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(25);
+        root.right.right = new TreeNode(22);
         root.right.right.right = new TreeNode(30);
 
         // Buscar el valor 7 en el árbol
