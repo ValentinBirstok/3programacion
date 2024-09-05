@@ -22,12 +22,13 @@ public class actividad32 {
             if (arr.length == 1) {
                 return new int[]{arr[0], arr[0]}; // Si solo hay un número, devolverlo dos veces
             }
-            return new int[0];
+            
     
             // Dividir el arreglo en dos mitades
             int medio = arr.length / 2;
             int[] izquierda = Arrays.copyOfRange(arr, 0, medio);
             int[] derecha = Arrays.copyOfRange(arr, medio, arr.length);
+            return new int[0];
 
 }
 }
