@@ -30,4 +30,41 @@ public class actividad33 {
         // Recursivamente encontrar los dos máximos scorings en cada mitad
         int[] mayoresIzquierda = encontrarDosScoringsMaximos(izquierda);
         int[] mayoresDerecha = encontrarDosScoringsMaximos(derecha);
+
+        // Combinar los resultados de ambas mitades
+        return combinarDosScoringsMaximos(mayoresIzquierda, mayoresDerecha);
+    }
+
+    // Función para combinar los dos máximos scorings de las dos mitades
+    private static int[] combinarDosScoringsMaximos(int[] izq, int[] der) {
+        int mayor1, mayor2;
+
+        // Encontrar el mayor entre los dos arreglos
+        if (izq[0] > der[0]) {
+            mayor1 = izq[0];
+            if (izq[1] > der[0]) {
+                mayor2 = izq[1];
+            } else {
+                mayor2 = der[0];
+            }
+        } else {
+            mayor1 = der[0];
+            if (der[1] > izq[0]) {
+                mayor2 = der[1];
+            } else {
+                mayor2 = izq[0];
+            }
+        }
+
+        return new int[]{mayor1, mayor2};
+    }
+
+    public static void main(String[] args) {
+        int[] scorings = {10, 20, 5, 3, 100, 50, 25};
+        int[] resultado = encontrarDosScoringsMaximos(scorings);
+        
+        System.out.println("El scoring mayor es: " + resultado[0]);
+        System.out.println("El segundo scoring mayor es: " + resultado[1]);
+    }
 }
+
