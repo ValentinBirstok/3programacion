@@ -1,7 +1,7 @@
 package clase3;
 import java.util.Arrays;
 
-public class actividad34 {
+public class NMayoresDivideVenceras {
 
     public static void main(String[] args) {
         int[] lista = {10, 20, 5, 3, 100, 50, 25};
@@ -25,6 +25,7 @@ public class actividad34 {
         if (inicio == fin) {
             return new int[]{lista[inicio]};
         }
+
         // Caso base: si hay menos elementos de los que queremos encontrar, devolvemos todos los disponibles
         if (fin - inicio + 1 <= n) {
             int[] resultado = Arrays.copyOfRange(lista, inicio, fin + 1);
@@ -55,7 +56,7 @@ public class actividad34 {
             }
         }
 
-// Si aún quedan elementos en la mitad izquierda, los añadimos
+        // Si aún quedan elementos en la mitad izquierda, los añadimos
         while (i < izq.length && k < n) {
             combinados[k++] = izq[i++];
         }
@@ -77,12 +78,4 @@ public class actividad34 {
         return invertido;
     }
 }
-//recurrencia
-//caso base==> N=1 ==> T(1)=C
-//Si N=2 (El arreglo se divide en dos mitades) ==> T(2) = 2T(1) + 2C ==> T(2)= 2*C + 2C= 4C
-//SI N=4 (lo dividimos en dos mitades) ==> T(4)= 2T(2)+4C ==> T(4) = 2 * 4C + 4C = 12C
-////El tiempo total esta determinado de la cantidad de veces que se divide el arreglo
-
-    
-
 
