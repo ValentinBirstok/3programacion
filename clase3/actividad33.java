@@ -70,3 +70,7 @@ public class actividad33 {
         return new int[]{mayor1, mayor2};
     }
 }
+//análisis de recurrencia 
+//caso base ==> n=1 ==> T(1)= C
+//Si n=2 ==> T(2)= 2T(1)+C ==> T(2)= 2C + C = 3C
+//Si n=4 se divide en 2 subproblemas mas, entonces=
