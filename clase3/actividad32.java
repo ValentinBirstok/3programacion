@@ -29,46 +29,47 @@ public class actividad32 {
             int[] izquierda = Arrays.copyOfRange(arr, 0, medio);
             int[] derecha = Arrays.copyOfRange(arr, medio, arr.length);
             
-            // Recursivamente encontrar los dos mayores en cada mitad
-        int[] mayoresIzquierda = encontrarDosMayores(izquierda);
-        int[] mayoresDerecha = encontrarDosMayores(derecha);
+                // Recursivamente encontrar los dos mayores en cada mitad
+            int[] mayoresIzquierda = encontrarDosMayores(izquierda);
+            int[] mayoresDerecha = encontrarDosMayores(derecha);
 
-        // Combinar los resultados de ambas mitades
-        return combinarDosMayores(mayoresIzquierda, mayoresDerecha);
-    }
-
-    // Función para combinar los resultados de las dos mitades
-    private static int[] combinarDosMayores(int[] izq, int[] der) {
-        int mayor1, mayor2;
-
-        // Encontrar el mayor entre los dos arreglos
-        if (izq[0] > der[0]) {
-            mayor1 = izq[0];
-            if (izq[1] > der[0]) {
-                mayor2 = izq[1];
-            } else {
-                mayor2 = der[0];
-            }
-        } else {
-            mayor1 = der[0];
-            if (der[1] > izq[0]) {
-                mayor2 = der[1];
-            } else {
-                mayor2 = izq[0];
-            }
+            // Combinar los resultados de ambas mitades
+            return combinarDosMayores(mayoresIzquierda, mayoresDerecha);
         }
 
-        return new int[]{mayor1, mayor2};
-    }
+        // Función para combinar los resultados de las dos mitades
+        private static int[] combinarDosMayores(int[] izq, int[] der) {
+            int mayor1, mayor2;
 
-    public static void main(String[] args) {
-        int[] numeros = {10, 20, 5, 3, 100, 50, 25};
-        int[] resultado = encontrarDosMayores(numeros);
-        
-        System.out.println("El mayor es: " + resultado[0]);
-        System.out.println("El segundo mayor es: " + resultado[1]);
-    }
-}
+            // Encontrar el mayor entre los dos arreglos
+            if (izq[0] > der[0]) {
+                mayor1 = izq[0];
+                if (izq[1] > der[0]) {
+                    mayor2 = izq[1];
+                } else {
+                    mayor2 = der[0];
+                }
+            } else {
+                mayor1 = der[0];
+                if (der[1] > izq[0]) {
+                    mayor2 = der[1];
+                } else {
+                    mayor2 = izq[0];
+                }
+            }
 
-}
-}
+            return new int[]{mayor1, mayor2};
+        }
+
+        public static void main(String[] args) {
+            int[] numeros = {10, 20, 5, 3, 100, 50, 25};
+            int[] resultado = encontrarDosMayores(numeros);
+            
+            System.out.println("El mayor es: " + resultado[0]);
+            System.out.println("El segundo mayor es: " + resultado[1]);
+        }
+    }
+    
+//analisis de recurrencia sin cálculos matemáticos
+    //caso base ==> T(1) = C
+    //paso inductivo ==> T(2) = 2T(1) + C (hace 2 veces el caso base + el trabajo que es constante)
