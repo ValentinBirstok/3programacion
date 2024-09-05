@@ -77,6 +77,10 @@ public class actividad34 {
         return invertido;
     }
 }
+//recurrencia
+//caso base==> N=1 ==> T(1)=C
+//Si N=2 (El arreglo se divide en dos mitades) ==> T(2) = 2T(1) + 2C ==> T(2)= 2*C + 2C= 4C
+
     
 
 
