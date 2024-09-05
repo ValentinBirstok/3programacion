@@ -26,6 +26,7 @@ public class actividad34 {
             return new int[]{lista[inicio]};
         }
 return new int[0];
+
     
 }
 }
