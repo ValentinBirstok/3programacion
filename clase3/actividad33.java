@@ -75,3 +75,4 @@ public class actividad33 {
 //Si n=2 ==> T(2)= 2T(1)+C ==> T(2)= 2C + C = 3C
 //Si n=4 se divide en 2 subproblemas mas, entonces=
 //T(4) = 2T(2) + C ==> T(4) = 2(3C) + C = 6C + C = 7C
+//El tiempo total esta determinado de la cantidad de veces que se divide el arreglo
