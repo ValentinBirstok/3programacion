@@ -33,5 +33,6 @@ public class actividad31 {
     //paso inductivo ==> T(2) = 2T(1) + C (hace 2 veces el caso base + el trabajo que es constante)
     //paso inductivo ==> como T(1)=c --> T(2)=2c+c=3c  
     //generalizacion ==> T(n)=n*c
+    //
     
 }
