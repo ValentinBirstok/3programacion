@@ -43,3 +43,4 @@ public class actividad42 {
 }
 //COMPLEJIDAD ALGORITMICA
 //al tener que hacer un sort, se utiliza O(n log n)
+// al estar en la presencia de un ciclo for se utiliza o(n)
