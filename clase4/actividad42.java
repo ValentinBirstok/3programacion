@@ -2,7 +2,7 @@ package clase4;
 
 import java.util.Arrays;
 
-public class Actividad42 {
+public class actividad42 {
 
     // Método para encontrar el número mínimo de comprobantes para realizar la compra
     public static int minComprobantesGreedy(int valorCompra, int[] comprobantes) {
@@ -20,3 +20,24 @@ public class Actividad42 {
                 comprobantesUsados++;
             }
         }
+        if (resto == 0) {
+            return comprobantesUsados;
+        } else {
+            // Si no es posible realizar la compra exacta, retornamos -1
+            return -1;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Ejemplo de uso
+        int[] comprobantes = {1, 5, 10, 50, 100};
+        int valorCompra = 137;
+
+        int resultado = minComprobantesGreedy(valorCompra, comprobantes);
+        if (resultado != -1) {
+            System.out.println("Número mínimo de comprobantes utilizados: " + resultado);
+        } else {
+            System.out.println("No es posible realizar la compra con los comprobantes disponibles.");
+        }
+    }
+}
