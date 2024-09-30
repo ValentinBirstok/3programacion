@@ -1,5 +1,5 @@
 package clase4;
-public class Actividad43 {
+public class actividad43 {
 
     public static void main(String[] args) {
         int[] valores = {30, 50, 60};
