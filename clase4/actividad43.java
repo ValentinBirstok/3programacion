@@ -22,3 +22,31 @@ public class Actividad43 {
                     double tempRatio = ratio[j];
                     ratio[j] = ratio[j + 1];
                     ratio[j + 1] = tempRatio;
+
+                    int tempValor = v[j];
+                    v[j] = v[j + 1];
+                    v[j + 1] = tempValor;
+
+                    int tempPeso = w[j];
+                    w[j] = w[j + 1];
+                    w[j + 1] = tempPeso;
+                }
+            }
+        }
+
+        double maxValue = 0;
+        for (int i = 0; i < n; i++) {
+            if (W == 0) {
+                break;
+            }
+            if (w[i] <= W) {
+                maxValue += v[i];
+                W -= w[i];
+            } else {
+                maxValue += (v[i] * ((double) W / w[i]));
+                W = 0;
+            }
+        }
+        return maxValue;
+    }
+}
