@@ -28,7 +28,8 @@ public class actividad4p1 {
 //complejidad temporal
 //C ==>valor del cambio que se necesita entregar
 //1er paso, si se debe ordenar las monedas se usa O(n log n)
-
+//  Al seleccionar las monedas se usa O(m) m==> numero total de monedas
+// Finalmente, al verificar si se puede formar el cambio, se usa O(C) 
 
     
     
