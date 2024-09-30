@@ -13,7 +13,7 @@ public class actividad43 {
     static double FractionalKnapsack(int n, int[] v, int[] w, int W) {
         double[] ratio = new double[n];
         for (int i = 0; i < n; i++) {
-            ratio[i] = (double) v[i] / w[i];
+            ratio[i] = (double) v[i] / w[i]; //Miramos cuanto tiene cada uno de relacion valor/peso
         }
 
         for (int i = 0; i < n - 1; i++) {
@@ -29,21 +29,21 @@ public class actividad43 {
 
                     int tempPeso = w[j];
                     w[j] = w[j + 1];
-                    w[j + 1] = tempPeso;
+                    w[j + 1] = tempPeso;  //ordenamos de manera decreciente
                 }
             }
         }
 
         double maxValue = 0;
         for (int i = 0; i < n; i++) {
-            if (W == 0) {
+            if (W == 0) { //si la capacidad de la mochila ya es 0, debe terminar
                 break;
             }
-            if (w[i] <= W) {
+            if (w[i] <= W) {//si todavia hay capacidad y entra el peso entero
                 maxValue += v[i];
                 W -= w[i];
-            } else {
-                maxValue += (v[i] * ((double) W / w[i]));
+            } else { //si queda capacidad pero no entra el peso entero
+                maxValue += (v[i] * ((double) W / w[i])); //Se debe verificar cuanto porcentaje de valor entra
                 W = 0;
             }
         }
