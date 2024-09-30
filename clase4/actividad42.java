@@ -41,3 +41,5 @@ public class actividad42 {
         }
     }
 }
+//COMPLEJIDAD ALGORITMICA
+//al tener que hacer un sort, se utiliza O(n log n)
