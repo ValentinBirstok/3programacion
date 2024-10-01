@@ -1,5 +1,13 @@
 package clase5;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 import clase5.actividad53.Arista;
 
 public class actividad54 {
@@ -42,6 +50,56 @@ public class actividad54 {
                 // Extraer el vértice u con la distancia mínima
                 Nodo nodoActual = Q.poll();
                 int u = nodoActual.vertice;
+                
+                // Si u ya está en el MST, continuar
+            if (inMST[u]) continue;
+
+            // Marcar u como incluido en el MST
+            inMST[u] = true;
+
+            // Recorrer cada vecino v de u
+            for (Arista arista : grafo.getOrDefault(u, new ArrayList<>())) {
+                int v = arista.destino;
+                int peso = arista.peso;
+
+                // Calcular la distancia alternativa
+                int alt = dist[u] + peso;
+
+                // Relajación
+                if (alt < dist[v]) {
+                    dist[v] = alt;
+                    prev[v] = u;
+                    Q.add(new Nodo(v, dist[v])); // Actualiza la cola de prioridad
+                }
+            }
+        }
+
+        // Mostrar los resultados
+        mostrarResultados(dist, prev, s);
+    }
+
+    // Método para mostrar los resultados
+    private void mostrarResultados(int[] dist, int[] prev, int inicio) {
+        System.out.println("Distancias desde el vértice de origen " + inicio + ":");
+        for (int i = 0; i < dist.length; i++) {
+            System.out.println("Distancia a " + i + ": " + dist[i]);
+        }
+        System.out.println("Predecesores:");
+        for (int i = 0; i < prev.length; i++) {
+            System.out.println("Predecesor de " + i + ": " + (prev[i] == -1 ? "NIL" : prev[i]));
+        }
+    }
+
+    // Clase interna para representar aristas
+    private static class Arista {
+        int destino;
+        int peso;
+
+        public Arista(int destino, int peso) {
+            this.destino = destino;
+            this.peso = peso;
+        }
+    }
 
 
 }
