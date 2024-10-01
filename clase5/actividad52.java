@@ -26,19 +26,19 @@ public class actividad52 {
 
     //verifica si existe una arista entre dos vértices
     public boolean verificarArista(int origen, int destino) {
-        if (origen >= 0 && destino >= 0 && origen < numVertices && destino < numVertices) { //NOS FIJAMOS QUE EL NUMERO QUE LLEGA COMO PARAMETRO NO SE PASE NI SEA NEGATIVO
-            return matrizAdyacencia[origen][destino] == 1; //si hay conexion, da true
+        if (origen >= 0 && destino >= 0 && origen < numVertices && destino < numVertices){ //NOS FIJAMOS QUE EL NUMERO QUE LLEGA COMO PARAMETRO NO SE PASE NI SEA NEGATIVO
+            return matrizAdyacencia[origen][destino]==1; //si hay conexion, da true
         }
         return false;
     }
 
     //lista los adyacentes de un vértice
     public void listarAdyacentes(int vertice) {
-        if (vertice >= 0 && vertice < numVertices) { //que respete limites
+        if (vertice>=0 && vertice < numVertices) { //que respete limites
             System.out.print("Vértices adyacentes a " + vertice + ": ");
             for (int i = 0; i < numVertices; i++) { //recorremos 
                 if (matrizAdyacencia[vertice][i] == 1) { //si hay conexion en la fila de nuestro vertice
-                    System.out.print(i + " ");
+                    System.out.print(i + "");
                 }
             }
             System.out.println();
