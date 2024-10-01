@@ -42,3 +42,51 @@ public class actividad53 {
             for (Arista adyacente : grafo.get(u)) {
                 int v = adyacente.destino;
                 int peso = adyacente.peso;
+
+                // Si v no está en el árbol y el peso de la arista (u, v) es menor que key[v]
+                if (!inMST[v] && peso < key[v]) {
+                    // Actualizamos key y parent
+                    key[v] = peso;
+                    parent[v] = u;
+                }
+            }
+        }
+
+        // Mostrar las conexiones del Árbol de Recubrimiento Mínimo y calcular el costo total
+        int costoTotal = 0;
+        System.out.println("Aristas en el Árbol de Recubrimiento Mínimo:");
+        for (int i = 1; i < numVertices; i++) {
+            System.out.println(parent[i] + " - " + i + " con costo " + key[i]);
+            costoTotal += key[i];
+        }
+        System.out.println("Costo total del Árbol de Recubrimiento Mínimo: " + costoTotal);
+    }
+
+    public static void main(String[] args) {
+        // Ejemplo de grafo con 5 vértices (estaciones eléctricas)
+        int numVertices = 5;
+
+        // Crear una lista de adyacencia para representar el grafo
+        List<List<Arista>> grafo = new ArrayList<>();
+        for (int i = 0; i < numVertices; i++) {
+            grafo.add(new ArrayList<>());
+        }
+
+        // Añadir las aristas con los pesos correspondientes (distancias/costos)
+        grafo.get(0).add(new Arista(1, 2)); // Estación 0 a Estación 1, costo 2
+        grafo.get(0).add(new Arista(3, 6)); // Estación 0 a Estación 3, costo 6
+        grafo.get(1).add(new Arista(0, 2)); // Estación 1 a Estación 0, costo 2
+        grafo.get(1).add(new Arista(2, 3)); // Estación 1 a Estación 2, costo 3
+        grafo.get(1).add(new Arista(3, 8)); // Estación 1 a Estación 3, costo 8
+        grafo.get(1).add(new Arista(4, 5)); // Estación 1 a Estación 4, costo 5
+        grafo.get(2).add(new Arista(1, 3)); // Estación 2 a Estación 1, costo 3
+        grafo.get(2).add(new Arista(4, 7)); // Estación 2 a Estación 4, costo 7
+        grafo.get(3).add(new Arista(0, 6)); // Estación 3 a Estación 0, costo 6
+        grafo.get(3).add(new Arista(1, 8)); // Estación 3 a Estación 1, costo 8
+        grafo.get(4).add(new Arista(1, 5)); // Estación 4 a Estación 1, costo 5
+        grafo.get(4).add(new Arista(2, 7)); // Estación 4 a Estación 2, costo 7
+
+        // Aplicar el algoritmo de Prim
+        prim(grafo, numVertices);
+    }
+}
