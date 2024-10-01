@@ -1,3 +1,4 @@
+package clase5;
 import java.util.*;
 
 class actividad54 {
