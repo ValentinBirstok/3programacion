@@ -25,5 +25,5 @@ public class actividad63programaciondinamica {
 
     //complejidad ==> O(N x P)
     // N ==> numero de proyectos
-    // ==> presupuesto disponible
+    // P ==> presupuesto disponible
 }
