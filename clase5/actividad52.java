@@ -73,7 +73,7 @@ public class actividad52 {
 
     //prueba la implementación del grafo
     public static void main(String[] args) {
-        actividad52 grafo = new actividad52(5); // Crear un grafo con 5 vértices
+        actividad52 grafo = new actividad52(5); // crea grafo con 5 vértices
 
         //agrega algunas aristas
         grafo.agregarArista(0, 1);
