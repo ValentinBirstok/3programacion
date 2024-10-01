@@ -1,57 +1,47 @@
-package clase5;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+class actividad54 {
+    // Grafo representado como lista de adyacencia
+    private final Map<Integer, List<Arista>> grafo;
 
-import clase5.actividad53.Arista;
+    // Constructor
+    public actividad54() {
+        this.grafo = new HashMap<>();
+    }
 
-public class actividad54 {
-    
-        // Grafo representado como lista de adyacencia
-        private final Map<Integer, List<Arista>> grafo;
-    
-        // Constructor
-        public Dijkstra() {
-            this.grafo = new HashMap<>();
-        }
-    
-        // Método para añadir una arista al grafo
-        public void agregarArista(int origen, int destino, int peso) {
-            this.grafo.putIfAbsent(origen, new ArrayList<>());
-            this.grafo.putIfAbsent(destino, new ArrayList<>());
-            this.grafo.get(origen).add(new Arista(destino, peso));
-        }
-        // Implementación del algoritmo de Dijkstra
-        public void dijkstra(int s) {
+    // Método para añadir una arista al grafo
+    public void agregarArista(int origen, int destino, int peso) {
+        this.grafo.putIfAbsent(origen, new ArrayList<>());
+        this.grafo.putIfAbsent(destino, new ArrayList<>());
+        this.grafo.get(origen).add(new Arista(destino, peso));
+    }
+
+    // Implementación del algoritmo de Dijkstra
+    public void dijkstra(int s) {
         // Inicialización
-            int numVertices = grafo.size();
-            int[] dist = new int[numVertices]; // Distancias desde el origen
-            int[] prev = new int[numVertices]; // Predecesores de cada vértice
-            boolean[] inMST = new boolean[numVertices]; // Verifica si el vértice está en el MST
+        int numVertices = grafo.size();
+        int[] dist = new int[numVertices]; // Distancias desde el origen
+        int[] prev = new int[numVertices]; // Predecesores de cada vértice
+        boolean[] inMST = new boolean[numVertices]; // Verifica si el vértice está en el MST
 
-            // Inicializar distancias a ∞ y prev a NIL
-            Arrays.fill(dist, Integer.MAX_VALUE);
-            Arrays.fill(prev, -1);
-            dist[s] = 0; // La distancia al vértice de origen es 0
+        // Inicializar distancias a ∞ y prev a NIL
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        Arrays.fill(prev, -1);
+        dist[s] = 0; // La distancia al vértice de origen es 0
 
-            // Crear una cola de prioridad Q y añadir todos los vértices
-            PriorityQueue<Nodo> Q = new PriorityQueue<>(Comparator.comparingInt(nodo -> nodo.distancia));
-            for (int v : grafo.keySet()) {
-                Q.add(new Nodo(v, dist[v]));
-            }
+        // Crear una cola de prioridad Q y añadir todos los vértices
+        PriorityQueue<Nodo> Q = new PriorityQueue<>(Comparator.comparingInt(nodo -> nodo.distancia));
+        for (int v : grafo.keySet()) {
+            Q.add(new Nodo(v, dist[v]));
+        }
 
-            // Mientras la cola no esté vacía
-            while (!Q.isEmpty()) {
-                // Extraer el vértice u con la distancia mínima
-                Nodo nodoActual = Q.poll();
-                int u = nodoActual.vertice;
-                
-                // Si u ya está en el MST, continuar
+        // Mientras la cola no esté vacía
+        while (!Q.isEmpty()) {
+            // Extraer el vértice u con la distancia mínima
+            Nodo nodoActual = Q.poll();
+            int u = nodoActual.vertice;
+
+            // Si u ya está en el MST, continuar
             if (inMST[u]) continue;
 
             // Marcar u como incluido en el MST
@@ -101,5 +91,33 @@ public class actividad54 {
         }
     }
 
+    // Clase interna para la cola de prioridad
+    private static class Nodo {
+        int vertice;
+        int distancia;
 
+        public Nodo(int vertice, int distancia) {
+            this.vertice = vertice;
+            this.distancia = distancia;
+        }
+    }
+
+    public static void main(String[] args) {
+        actividad54 dijkstra = new actividad54();
+        // Añadir aristas (ejemplo)
+        dijkstra.agregarArista(0, 1, 10);
+        dijkstra.agregarArista(0, 2, 5);
+        dijkstra.agregarArista(1, 2, 2);
+        dijkstra.agregarArista(1, 3, 1);
+        dijkstra.agregarArista(2, 1, 3);
+        dijkstra.agregarArista(2, 3, 9);
+        dijkstra.agregarArista(2, 4, 2);
+        dijkstra.agregarArista(3, 4, 4);
+        dijkstra.agregarArista(4, 3, 6);
+
+        // Ejecutar el algoritmo de Dijkstra desde el centro de distribución principal (vértice 0)
+        dijkstra.dijkstra(0);
+    }
 }
+
+
