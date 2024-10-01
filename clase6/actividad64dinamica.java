@@ -24,7 +24,7 @@ public class actividad64dinamica {
     }
 }
 
-/*O(n×m), donde 
+/*  complejidad --> O(n × m), donde 
 𝑛
 n es el número de paquetes y 
 𝑚

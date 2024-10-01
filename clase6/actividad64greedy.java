@@ -1,7 +1,7 @@
 package clase6;
-
 import java.util.Arrays;
 import java.util.Comparator;
+
 
 class Paquete {
     int costo;
@@ -39,4 +39,5 @@ public class actividad64greedy {
 
         System.out.println("Ganancia máxima: " + gananciaTotal);
     }
+    //complejidad --> O(n log n)
 }
