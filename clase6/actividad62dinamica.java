@@ -41,3 +41,18 @@ public class actividad62dinamica {
         System.out.println("El valor máximo usando programación dinámica es: " + resultado);
     }
 }
+/*   Objeto 1: Peso 2 y Valor 4
+Para una capacidad menor que 2, no se puede incluir el objeto 1, así que el valor es 0.
+A partir de una capacidad de 2 o más, podemos incluir el objeto 1, por lo que el valor será 4 en cada caso.
+     Objeto 2: Peso 5 y Valor 2
+Para capacidades menores a 5, el mejor valor es el del objeto 1 (4).
+A partir de una capacidad de 5, decidimos si incluimos el objeto 2 o mantenemos el objeto 1. El objeto 1 sigue dando más valor (4 vs 2), por lo que optamos por no tomar el objeto 2.
+    Objeto 3: Peso 6 y Valor 1
+Para capacidades menores a 6, mantenemos los valores de los objetos anteriores (máximo 4).
+A partir de una capacidad de 6, no es beneficioso incluir el objeto 3 porque su valor (1) es menor que el valor actual que podemos obtener (4).
+    Objeto 4: Peso 7 y Valor 6
+Para capacidades menores a 7, el mejor valor sigue siendo el obtenido con el objeto 1 (4).
+A partir de una capacidad de 7, decidimos si incluimos el objeto 4. Si lo incluimos, obtenemos un valor de 6.
+Para una capacidad de 9 o 10, podemos combinar el objeto 1 (valor 4) con el objeto 4 (valor 6), obteniendo un valor total de 10, que es la mejor opción.
+
+El valor máximo que se puede obtener con una capacidad de 10 es 10, seleccionando el objeto 1 y el objeto 4.*/
