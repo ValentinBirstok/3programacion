@@ -74,3 +74,42 @@ public class actividad73 {
                 }
                 System.out.println("No existen ciclos negativos en el grafo.");
             }
+            // Método para imprimir el camino más corto
+    void printShortestPath(int pred[][], int origen, int destino) {
+        if (pred[origen][destino] == -1) {
+            System.out.println("No hay camino desde " + origen + " hasta " + destino);
+            return;
+        }
+
+        System.out.print("El camino más corto desde " + origen + " hasta " + destino + " es: ");
+        int actual = destino;
+        StringBuilder path = new StringBuilder();
+
+        // Reconstruir el camino desde el destino hasta el origen
+        while (actual != origen) {
+            path.insert(0, " -> " + actual);
+            actual = pred[origen][actual];
+            if (actual == -1) {
+                System.out.println("No hay camino.");
+                return;
+            }
+        }
+        path.insert(0, origen); // Agregar el origen al inicio
+        System.out.println(path);
+    }
+
+    public static void main(String[] args) {
+        actividad72 fw = new actividad72();
+
+        // Definir el grafo con tiempos de viaje (en minutos)
+        int graph[][] = {
+            { 0, 10, 5, INF },   // Centro de distribución 1
+            { INF, 0, INF, 1 },  // Centro de distribución 2
+            { INF, 3, 0, 2 },    // Centro de distribución 3
+            { INF, INF, INF, 0 } // Centro de distribución 4
+        };
+
+        int V = graph.length; // Número de vértices (centros de distribución)
+        fw.floydWarshall(graph, V); // Ejecutar el algoritmo
+    }
+}
