@@ -16,4 +16,12 @@ Verificamos si el camino de 1 a 4 puede mejorar pasando por el nodo 2.
 El camino de 1 → 2 tiene peso 2, y de 2 → 4 tiene peso 4, lo que da una distancia total de 2 + 4 = 6.
 Este nuevo camino tiene una distancia mayor que la distancia directa de 5, por lo que no actualizamos.
 Iteración 3: Usando el nodo 3 como intermediario
-No hay ningún camino que pase por el nodo 3 y conecte a 1 con 4.*/
+No hay ningún camino que pase por el nodo 3 y conecte a 1 con 4.
+No hay cambio en la distancia de 1 a 4.
+Iteración 4: Usando el nodo 4 como intermediario
+Verificamos si el camino de 1 a 4 puede mejorar pasando por el nodo 4.
+No tiene sentido pasar por el mismo nodo 4 cuando ya tenemos la distancia directa de 1 a 4.
+No hay cambio en la distancia de 1 a 4.
+Resultado final de la distancia de 1 a 4:
+La distancia más corta de 1 a 4 sigue siendo 5, que es la distancia directa inicial.
+Al final, tenemos las siguientes distancias más cortas entre todos los pares de nodos:*/
