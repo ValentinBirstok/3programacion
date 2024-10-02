@@ -1,12 +1,34 @@
 package clase7;
 
 public class actividad71 {
-    public static void main(String[] args) {
+    
+    final static int INF = 99999; // Usamos un valor grande para representar el infinito
+    
+    
+    void floydWarshall(int graph[][], int V) {
+        int dist[][] = new int[V][V]; // Crear matriz de distancias
+    
+        // Inicializar la matriz de distancias con los valores iniciales del grafo
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                dist[i][j] = graph[i][j]; // Copiamos los valores iniciales
+            }
+        }
+    
         
+        for (int k = 0; k < V; k++) {   // Ciclo sobre el nodo intermedio 'k'
+            for (int i = 0; i < V; i++) {   // Ciclo sobre el nodo origen 'i'
+                for (int j = 0; j < V; j++) {   // Ciclo sobre el nodo destino 'j'
+                // Actualización de la distancia más corta si encontramos un camino mejor
+                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
+                        dist[i][j] = dist[i][k] + dist[k][j];
+            }
+        }
     }
+}
     
 
-}
+}}
 /*Iteración 1: Usando el nodo 1 como intermediario
 Verificamos si el camino de 1 a 4 puede mejorar pasando por el nodo 1.
 La distancia directa de 1 a 4 es 5, y no se puede mejorar pasando por el mismo nodo 1, ya que el camino sería simplemente 1 → 4.
