@@ -3,12 +3,10 @@ package clase7;
 import java.util.Scanner;
 
 public class actividad73 {
-    
     final static int INF = 99999; // Usamos un valor grande para representar el infinito
 
-    void floydWarshall(int graph[][], int V) {
-        int dist[][] = new int[V][V]; 
-        int pred[][] = new int[V][V]; 
+    void floydWarshall(int graph[][], int V, int pred[][]) {
+        int dist[][] = new int[V][V]; // Crear matriz de distancias
 
         // Inicializar la matriz de distancias y predecesores
         for (int i = 0; i < V; i++) {
@@ -22,7 +20,7 @@ public class actividad73 {
             }
         }
 
-        
+        // Aplicar el algoritmo de Floyd-Warshall
         for (int k = 0; k < V; k++) {
             for (int i = 0; i < V; i++) {
                 for (int j = 0; j < V; j++) {
@@ -34,48 +32,40 @@ public class actividad73 {
                 }
             }
         }
-                // Imprimir la matriz de distancias finales
-                printSolution(dist, V);
-                // Verificar si existen ciclos negativos
-                checkNegativeCycles(dist, V);
-        
-                // Solicitar el origen y el destino
-                Scanner scanner = new Scanner(System.in);
-                System.out.print("Ingrese el nodo de origen (0 a " + (V-1) + "): ");
-                int origen = scanner.nextInt();
-                System.out.print("Ingrese el nodo de destino (0 a " + (V-1) + "): ");
-                int destino = scanner.nextInt();
-        
-                // Imprimir el camino más corto
-                printShortestPath(pred, origen, destino);
+
+        // Imprimir la matriz de distancias finales
+        printSolution(dist, V);
+        // Verificar si existen ciclos negativos
+        checkNegativeCycles(dist, V);
+    }
+
+    // Método para imprimir la solución
+    void printSolution(int dist[][], int V) {
+        System.out.println("Matriz de distancias más cortas entre cada par de centros de distribución:");
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                if (dist[i][j] == INF)
+                    System.out.print("INF ");
+                else
+                    System.out.print(dist[i][j] + " ");
             }
-        
-            // Método para imprimir la solución
-            void printSolution(int dist[][], int V) {
-                System.out.println("Matriz de distancias más cortas entre cada par de centros de distribución:");
-                for (int i = 0; i < V; i++) {
-                    for (int j = 0; j < V; j++) {
-                        if (dist[i][j] == INF)
-                            System.out.print("INF ");
-                        else
-                            System.out.print(dist[i][j] + " ");
-                    }
-                    System.out.println();
-                }
+            System.out.println();
+        }
+    }
+
+    // Método para verificar ciclos negativos
+    void checkNegativeCycles(int dist[][], int V) {
+        for (int i = 0; i < V; i++) {
+            if (dist[i][i] < 0) {
+                System.out.println("Existen ciclos negativos en el grafo.");
+                return; // Salimos si encontramos un ciclo negativo
             }
-        
-            // Método para verificar ciclos negativos
-            void checkNegativeCycles(int dist[][], int V) {
-                for (int i = 0; i < V; i++) {
-                    if (dist[i][i] < 0) {
-                        System.out.println("Existen ciclos negativos en el grafo.");
-                        return; // Salimos si encontramos un ciclo negativo
-                    }
-                }
-                System.out.println("No existen ciclos negativos en el grafo.");
-            }
-            // Método para imprimir el camino más corto
-    void printShortestPath(int pred[][], int origen, int destino) {
+        }
+        System.out.println("No existen ciclos negativos en el grafo.");
+    }
+
+    // Método para imprimir el camino más corto
+    void printShortestPath(int pred[][], int origen, int destino, int dist[][]) {
         if (pred[origen][destino] == -1) {
             System.out.println("No hay camino desde " + origen + " hasta " + destino);
             return;
@@ -95,11 +85,14 @@ public class actividad73 {
             }
         }
         path.insert(0, origen); // Agregar el origen al inicio
+
+        // Imprimir la distancia
         System.out.println(path);
+        System.out.println("Distancia total: " + dist[origen][destino]);
     }
 
     public static void main(String[] args) {
-        actividad72 fw = new actividad72();
+        actividad73 fw = new actividad73();
 
         // Definir el grafo con tiempos de viaje (en minutos)
         int graph[][] = {
@@ -107,9 +100,25 @@ public class actividad73 {
             { INF, 0, INF, 1 },  // Centro de distribución 2
             { INF, 3, 0, 2 },    // Centro de distribución 3
             { INF, INF, INF, 0 } // Centro de distribución 4
+
         };
 
         int V = graph.length; // Número de vértices (centros de distribución)
-        fw.floydWarshall(graph, V); // Ejecutar el algoritmo
+
+        // Crear la matriz de predecesores
+        int pred[][] = new int[V][V];
+
+        // Ejecutar el algoritmo de Floyd-Warshall
+        fw.floydWarshall(graph, V, pred); 
+
+        // Solicitar el origen y el destino
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el nodo de origen (0 a " + (V - 1) + "): ");
+        int origen = scanner.nextInt();
+        System.out.print("Ingrese el nodo de destino (0 a " + (V - 1) + "): ");
+        int destino = scanner.nextInt();
+
+        // Imprimir el camino más corto
+        fw.printShortestPath(pred, origen, destino, graph);
     }
 }
