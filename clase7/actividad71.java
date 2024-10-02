@@ -43,9 +43,23 @@ public class actividad71 {
             System.out.println();
         }
     }
-    
+    public static void main(String[] args) {
+        actividad71 fw = new actividad71();
 
-}}
+        // Definir el grafo según las aristas que mencionas
+        int graph[][] = {
+            { 0, 2, INF, 5 },   // Nodo 1: 1 → 2 (peso 2), 1 → 4 (peso 5)
+            { INF, 0, INF, 4 }, // Nodo 2: 2 → 4 (peso 4)
+            { INF, INF, 0, INF },// Nodo 3: No tiene aristas
+            { INF, INF, 2, 0 }  // Nodo 4: 4 → 3 (peso 2)
+        };
+
+        int V = graph.length; // Número de vértices (4 nodos)
+        fw.floydWarshall(graph, V); // Ejecutar el algoritmo
+    }
+}
+
+
 /*Iteración 1: Usando el nodo 1 como intermediario
 Verificamos si el camino de 1 a 4 puede mejorar pasando por el nodo 1.
 La distancia directa de 1 a 4 es 5, y no se puede mejorar pasando por el mismo nodo 1, ya que el camino sería simplemente 1 → 4.
