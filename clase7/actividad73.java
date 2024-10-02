@@ -34,3 +34,43 @@ public class actividad73 {
                 }
             }
         }
+                // Imprimir la matriz de distancias finales
+                printSolution(dist, V);
+                // Verificar si existen ciclos negativos
+                checkNegativeCycles(dist, V);
+        
+                // Solicitar el origen y el destino
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Ingrese el nodo de origen (0 a " + (V-1) + "): ");
+                int origen = scanner.nextInt();
+                System.out.print("Ingrese el nodo de destino (0 a " + (V-1) + "): ");
+                int destino = scanner.nextInt();
+        
+                // Imprimir el camino más corto
+                printShortestPath(pred, origen, destino);
+            }
+        
+            // Método para imprimir la solución
+            void printSolution(int dist[][], int V) {
+                System.out.println("Matriz de distancias más cortas entre cada par de centros de distribución:");
+                for (int i = 0; i < V; i++) {
+                    for (int j = 0; j < V; j++) {
+                        if (dist[i][j] == INF)
+                            System.out.print("INF ");
+                        else
+                            System.out.print(dist[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        
+            // Método para verificar ciclos negativos
+            void checkNegativeCycles(int dist[][], int V) {
+                for (int i = 0; i < V; i++) {
+                    if (dist[i][i] < 0) {
+                        System.out.println("Existen ciclos negativos en el grafo.");
+                        return; // Salimos si encontramos un ciclo negativo
+                    }
+                }
+                System.out.println("No existen ciclos negativos en el grafo.");
+            }
