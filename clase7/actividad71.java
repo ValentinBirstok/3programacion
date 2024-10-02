@@ -26,6 +26,23 @@ public class actividad71 {
         }
     }
 }
+     // Imprimir la matriz de distancias finales
+     printSolution(dist, V);
+    }
+
+    // Método para imprimir la solución
+    void printSolution(int dist[][], int V) {
+        System.out.println("Matriz de distancias más cortas entre cada par de vértices:");
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                if (dist[i][j] == INF)
+                    System.out.print("INF ");
+                else
+                    System.out.print(dist[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
     
 
 }}
