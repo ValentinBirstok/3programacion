@@ -24,4 +24,12 @@ No tiene sentido pasar por el mismo nodo 4 cuando ya tenemos la distancia direct
 No hay cambio en la distancia de 1 a 4.
 Resultado final de la distancia de 1 a 4:
 La distancia más corta de 1 a 4 sigue siendo 5, que es la distancia directa inicial.
-Al final, tenemos las siguientes distancias más cortas entre todos los pares de nodos:*/
+Al final, tenemos las siguientes distancias más cortas entre todos los pares de nodos:
+
+De 1 a 2: distancia 2 (sin cambios).
+De 1 a 3: distancia 7 (encontrado al pasar por el nodo 4).
+De 1 a 4: distancia 5 (sin cambios).
+De 2 a 3: distancia 6 (encontrado al pasar por el nodo 4).
+De 2 a 4: distancia 4 (sin cambios).
+De 4 a 3: distancia 2 (sin cambios).
+Los demás pares de nodos no tienen caminos posibles y mantienen la distancia infinita.*/
