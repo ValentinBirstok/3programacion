@@ -46,4 +46,29 @@ public class actividad72 {
                 }
             }
         // Método para verificar ciclos negativos
+        void checkNegativeCycles(int dist[][], int V) {
+            for (int i = 0; i < V; i++) {
+                if (dist[i][i] < 0) {
+                    System.out.println("Existen ciclos negativos en el grafo.");
+                    return; // Salimos si encontramos un ciclo negativo
+                }
+            }
+            System.out.println("No existen ciclos negativos en el grafo.");
+        }
+    
+        public static void main(String[] args) {
+            actividad72 fw = new actividad72();
+    
+            // Definir el grafo con tiempos de viaje (en minutos)
+            int graph[][] = {
+                { 0, 10, 5, INF },   // Centro de distribución 1
+                { INF, 0, INF, 1 },  // Centro de distribución 2
+                { INF, 3, 0, 2 },    // Centro de distribución 3
+                { INF, INF, INF, 0 } // Centro de distribución 4
+            };
+    
+            int V = graph.length; // Número de vértices (centros de distribución)
+            fw.floydWarshall(graph, V); // Ejecutar el algoritmo
+        }
+    }
         
