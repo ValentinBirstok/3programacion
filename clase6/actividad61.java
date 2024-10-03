@@ -21,6 +21,8 @@ public class actividad61 {
                         dp[i][w] = 0; // Base: sin objetos o sin capacidad
                     } else if (pesos[i - 1] <= w) {
                         dp[i][w] = Math.max(valores[i - 1] + dp[i - 1][w - pesos[i - 1]], dp[i - 1][w]);
+                        //el valor máximo que se puede obtener con los objetos que consideramos antes del objeto actual
+                        //y la capacidad restante de la mochila después de incluir el objeto actual.
                     } else {
                         dp[i][w] = dp[i - 1][w]; // No incluir el objeto
                     }
@@ -30,22 +32,26 @@ public class actividad61 {
             return dp[n][capacidad]; // Valor máximo
         }
     }
-    //PRUEBA DE ESCRITORIO
-    //Jugador 1: Con costo 3 y rendimiento 4:
+    /*Prueba de Escritorio
+    Objeto 1: Con costo 3 y valor 4.
+    Objeto 2: Con costo 4 y valor 5.
+    Objeto 3: Con costo 2 y valor 3.
+    Descripción de la Prueba
+    Objeto 1 (Costo 3, Valor 4):
+    Si la capacidad es menor a 3, no podemos incluirlo, así que dp[1][j] = 0.
+    A partir de una capacidad de 3, podemos incluir el objeto y el valor total es 4.
+    
+    Objeto 2 (Costo 4, Valor 5):
+    Para una capacidad de 4, el mejor valor es 5 (fichamos el objeto 2).
+    Para capacidades mayores, decidimos si incluimos el objeto 2 junto con el objeto 1 o solo el objeto 1. Para una capacidad de 6, podemos incluir el objeto 2 junto con el objeto 1 (valor total 9).
 
-    //Si el presupuesto es menor a 3, no podemos incluirlo, así que dp[1][j] = 0.
-    //A partir de un presupuesto de 3, podemos incluir al jugador y el rendimiento es 4.
-    //Jugador 2: Con costo 4 y rendimiento 5:
-
-    //Para un presupuesto de 4, el mejor rendimiento es 5 (fichamos al jugador 2).
-    //Para presupuestos mayores, decidimos si fichamos al jugador 2 junto al 1 o solo al 1. Para un presupuesto de 6, podemos fichar al jugador 2 junto al 1 (rendimiento total 9).
-    //Jugador 3: Con costo 2 y rendimiento 3:
-
-    //Para un presupuesto de 2, fichamos al jugador 3 y obtenemos 3.
-    //Para presupuestos mayores, si fichamos al jugador 1 y al jugador 3, obtenemos 7 (costo total 5).
-    //Para un presupuesto de 6, si fichamos a los jugadores 2 y 3, obtenemos un rendimiento total de 8 (costo total 6).
-    //Paso 3: Resultado
-    //El rendimiento máximo con un presupuesto de 6 es 8, seleccionando a los jugadores 2 y 3 (costo total: 6).
+    Objeto 3 (Costo 2, Valor 3):
+    Para una capacidad de 2, incluimos el objeto 3 y obtenemos 3.
+    Para capacidades mayores, si incluimos el objeto 1 y el objeto 3, obtenemos 7 (costo total 5).
+    Para una capacidad de 6, si incluimos los objetos 2 y 3, obtenemos un valor total de 8 (costo total 6).
+    
+    Resultado Final
+    Valor Máximo: Con una capacidad de 6, el valor máximo alcanzable es 8, seleccionando los objetos 2 y 3 (costo total: 6).*/
 
     
 

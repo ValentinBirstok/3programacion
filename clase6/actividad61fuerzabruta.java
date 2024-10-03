@@ -59,34 +59,33 @@ public class actividad61fuerzabruta {
 
     
         //Combinación 000: No seleccionamos a nadie
-
         //Rendimiento: 0
         //Costo: 0
+        
         //Combinación 001: Solo seleccionamos el Objeto 3
-
         //Rendimiento: 3
         //Costo: 2
+        
         //Combinación 010: Solo seleccionamos el Objeto 2
-
         //Rendimiento: 5
         //Costo: 4
+        
         //Combinación 011: Objetos 2 y 3
-
         //Rendimiento: 5 + 3 = 8
         //Costo: 4 + 2 = 6 (mejor)
+        
         //Combinación 100: Solo seleccionamos el Objeto 1
-
         //Rendimiento: 4
         //Costo: 3
+       
         //Combinación 101: Objetos 1 y 3
-
         //Rendimiento: 4 + 3 = 7
         //Costo: 3 + 2 = 5
+        
         //Combinación 110: Objetos 1 y 2
-
         //Rendimiento: 4 + 5 = 9
         //Costo: 3 + 4 = 7 (excede el presupuesto)
+        
         //Combinación 111: Objetos 1, 2 y 3
-
         //Rendimiento: 4 + 5 + 3 = 12
         //Costo: 3 + 4 + 2 = 9 (excede el presupuesto)
