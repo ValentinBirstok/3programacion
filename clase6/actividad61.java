@@ -43,7 +43,8 @@ public class actividad61 {
     
     Objeto 2 (Costo 4, Valor 5):
     Para una capacidad de 4, el mejor valor es 5 (fichamos el objeto 2).
-    Para capacidades mayores, decidimos si incluimos el objeto 2 junto con el objeto 1 o solo el objeto 1. Para una capacidad de 6, podemos incluir el objeto 2 junto con el objeto 1 (valor total 9).
+    Para capacidades mayores, decidimos si incluimos el objeto 2 junto con el objeto 1 o solo el objeto 1. 
+    Sin embargo, para una capacidad de 6, no podemos incluir el objeto 2 junto con el objeto 1, ya que su costo total sería 7, lo que excede la capacidad.
 
     Objeto 3 (Costo 2, Valor 3):
     Para una capacidad de 2, incluimos el objeto 3 y obtenemos 3.
