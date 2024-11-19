@@ -22,6 +22,26 @@ Técnicas y herramientas para detectar ataques
 -Análisis de registros: Herramientas como Splunk o ELK Stack para revisar patrones en los registros.
 -Análisis de reputación: Evaluar la reputación de direcciones IP, dominios o usuarios
 
+3) Aplicación de la Poda Alfa-Beta en la Detección de Ciberataques
+La poda alfa-beta optimiza la detección de ciberataques al evitar analizar rutas innecesarias. El sistema evalúa posibles amenazas y respuestas utilizando un árbol de decisiones:
+
+Alfa--> es la mejor defensa mínima encontrada. Si se identifica una defensa efectiva, alfa se actualiza.
+Beta--> es el peor ataque que puede realizar un atacante antes de ser detenido. Beta se ajusta si se detecta un ataque más peligroso
+
+4)                                Inicio
+                                  |
+       ---------------------------------------------------
+      |                     |                    |                    |
+Inyección SQL      Fuerza Bruta          DoS                Phishing
+      |                     |                    |                    |
+  ----------------   ---------------      ------------      ----------------
+ |               |   |             |     |          |    |                |
+Filtrar IP   Inspección   Restringir   Analizar Logs  Bloquear IP    Filtrar IP
+                Paquetes        IP Fuente
+
+
+
+
 
     
-}*/
+*/}
