@@ -73,7 +73,7 @@ Cuando el algoritmo coloca una reina en cada fila sin conflictos, imprime el tab
 3)¿Qué ocurre cuando no puede colocar más reinas?
 El algoritmo retrocede al último paso válido y prueba otra columna. Si todas las opciones están agotadas, informa que no hay solución.
 
-4)Qué sucede en el código cuando el algoritmo "retrocede"?
+4) Qué sucede en el código cuando el algoritmo "retrocede"?
 
 
 
