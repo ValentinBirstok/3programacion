@@ -73,13 +73,17 @@ Cuando el algoritmo coloca una reina en cada fila sin conflictos, imprime el tab
 3)¿Qué ocurre cuando no puede colocar más reinas?
 El algoritmo retrocede al último paso válido y prueba otra columna. Si todas las opciones están agotadas, informa que no hay solución.
 
-4) Qué sucede en el código cuando el algoritmo "retrocede"?
+4) ¿Qué sucede en el código cuando el algoritmo "retrocede"?
+La posición de la reina más reciente se vacía (se asigna -1 en este caso), y el algoritmo vuelve a probar con otra columna en la fila anterior.
 
+5)¿Qué modificaciones harías para aumentar N a 8?
+Solo se debe cambiar el valor de n al llamar a la función "8".
 
+6¿Cómo crees que cambiaría el tiempo de ejecución?
+Incrementar N aumenta exponencialmente el tiempo, ya que el número de combinaciones posibles crece rápidamente. Esto se debe a que el algoritmo explora todas las posibilidades antes de descartar las inválidas.
 
-
-
-
+7¿Por qué el método isSafe es crucial en este algoritmo?
+Este método asegura que las reinas no se ataquen mutuamente, verificando las condiciones en filas, columnas y diagonales. Sin este método, el algoritmo no podría garantizar soluciones válidas.
 
 */
     
