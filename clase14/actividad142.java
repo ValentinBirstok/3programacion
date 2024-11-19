@@ -75,3 +75,22 @@ public class actividad142 {
             System.out.println();
         }
     }
+    public static void main(String[] args) {
+        // Tablero de Sudoku 6x6 con números del 1 al 6
+        int[][] tablero = {
+            {5, 3, 0, 0, 0, 0},
+            {6, 0, 0, 1, 0, 0},
+            {0, 0, 0, 4, 0, 0},
+            {0, 6, 0, 0, 0, 0},
+            {0, 0, 0, 2, 3, 0},
+            {4, 0, 0, 5, 0, 6}
+        };
+
+        if (resolverSudoku(tablero)) {
+            System.out.println("Sudoku resuelto:");
+            mostrarTablero(tablero);
+        } else {
+            System.out.println("No se pudo resolver el Sudoku.");
+        }
+    }
+}
