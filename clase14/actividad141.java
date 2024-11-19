@@ -67,6 +67,14 @@ public class actividad141 {
 /* 1) ¿Cómo funciona el backtracking en este problema? El backtracking coloca una reina en una casilla, luego prueba con la siguiente. 
 Si encuentra una solución válida, la muestra. Si no puede colocar más reinas sin conflictos, retrocede (elimina la última reina) y prueba nuevas posiciones.
 
+2)¿Qué pasa cuando el algoritmo encuentra una solución?
+Cuando el algoritmo coloca una reina en cada fila sin conflictos, imprime el tablero o almacena la solución. Luego puede continuar buscando otras soluciones si el código está adaptado para ello.
+
+3)¿Qué ocurre cuando no puede colocar más reinas?
+El algoritmo retrocede al último paso válido y prueba otra columna. Si todas las opciones están agotadas, informa que no hay solución.
+
+4)Qué sucede en el código cuando el algoritmo "retrocede"?
+
 
 
 
