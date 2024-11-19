@@ -29,7 +29,7 @@ public class actividad113 {
                 // Si logramos colocar todas las impresoras, mostramos el tablero
                 mostrarTablero(tablero);
             } else {
-                // Recorrer todas las posibles columnas para la impresora en la fila actual
+                //  Recorrer todas las posibles columnas para la impresora en la fila actual
                 for (int colImpresora = 0; colImpresora < N; colImpresora++) {
                     if (esPosicionValida(tablero, filaImpresora, colImpresora, 2)) {
                         // Colocar la impresora en la posición válida
