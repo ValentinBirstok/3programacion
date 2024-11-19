@@ -28,8 +28,8 @@ class Almacen {
 }
 
 class Grafo {
-    private Map<Integer, Almacen> almacenes;                  // Mapa de almacenes por ID
-    private Map<Integer, List<Integer>> listaAdyacencia;      // Lista de adyacencia
+    private Map<Integer, Almacen> almacenes;                  //  Mapa de almacenes por ID
+    private Map<Integer, List<Integer>> listaAdyacencia;      //  Lista de adyacencia
 
     // Constructor
     public Grafo() {
