@@ -72,4 +72,4 @@ public class actividad113 {
         int[][] tablero = new int[N][N]; // Inicializar la oficina vacía
         colocarComputadorasEImpresoras(tablero, 0, 0); // Iniciar la búsqueda de soluciones
     }
-}
+}//
