@@ -109,11 +109,11 @@ public class actividad124 {
         RedSocial red = new RedSocial();
 
         // Agregar usuarios a la red
-        red.agregarUsuario(1, "Alice");
-        red.agregarUsuario(2, "Bob");
-        red.agregarUsuario(3, "Charlie");
+        red.agregarUsuario(1, "Valentin");
+        red.agregarUsuario(2, "Ezequiel");
+        red.agregarUsuario(3, "Carlos");
         red.agregarUsuario(4, "David");
-        red.agregarUsuario(5, "Eve");
+        red.agregarUsuario(5, "Eva");
 
         // Conectar usuarios como amigos
         red.conectarAmigos(1, 2);
