@@ -30,5 +30,6 @@ es un método de refinamiento que puede usarse en combinación con otros algorit
 Algoritmo de 3-opt
 similar al 2-opt pero intercambia tres aristas en lugar de dos lo que permite encontrar mejores soluciones en algunos casos a costa de un mayor tiempo de cálculo
 
+
 */
 }
