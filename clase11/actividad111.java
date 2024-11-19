@@ -7,6 +7,7 @@ public class actividad111 {
     private static boolean esSeguro(int[][] tablero, int fila1, int col1, int fila2, int col2) {
         // Verificar si están en la misma fila, columna o diagonal
         return fila1 != fila2 && col1 != col2 && Math.abs(fila1 - fila2) != Math.abs(col1 - col2);
+        //En ajedrez, dos reinas están en la misma diagonal si la diferencia absoluta entre sus filas es igual a la diferencia absoluta entre sus columnas.
     }
 
     // Método para mostrar una configuración válida del tablero
