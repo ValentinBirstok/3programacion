@@ -53,7 +53,7 @@ public class actividad111 {
                     }
                 }
 
-                // Retirar la primera reina para probar la siguiente posición
+                // Retirar la primera reina para probar en la siguiente posición
                 tablero[fila1][col1] = 0;
             }
         }
