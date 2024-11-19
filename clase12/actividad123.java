@@ -91,7 +91,7 @@ class Grafo {
             int id = cola.poll();
             System.out.print(almacenes.get(id) + " -> ");
 
-            // Explorar vecinos no visitados
+            //  Explorar vecinos no visitados
             for (int vecino : listaAdyacencia.get(id)) {
                 if (!visitado.contains(vecino)) {
                     visitado.add(vecino);
