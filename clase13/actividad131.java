@@ -10,6 +10,18 @@ public class actividad131 {
 -Acceso no autorizado: Intentar explotar vulnerabilidades para acceder a áreas restringidas sin permiso.
 
 2) Funciones del Sistema de Detección
+-Monitoreo de tráfico: Analizar el tráfico entrante y saliente en busca de patrones sospechosos.
+-Detección de anomalías: Identificar comportamientos inusuales que se desvían de los patrones normales de uso.
+-Filtrado de IP: Bloquear direcciones IP conocidas por realizar ataques.
+-Inspección de paquetes: Examinar el contenido de los paquetes de datos en busca de patrones maliciosos.
+
+
+Técnicas y herramientas para detectar ataques
+-IDS/IPS (Sistemas de Detección y Prevención de Intrusiones): Herramientas como Snort o Suricata pueden detectar patrones conocidos de ataques en el tráfico.
+-Firewalls: Para bloquear tráfico no autorizado y escaneo de puertos.
+-Análisis de registros: Herramientas como Splunk o ELK Stack para revisar patrones en los registros.
+-Análisis de reputación: Evaluar la reputación de direcciones IP, dominios o usuarios
+
 
     
 }*/
