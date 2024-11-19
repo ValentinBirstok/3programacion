@@ -75,3 +75,54 @@ class Grafo {
             }
         }
     }
+
+    public void BFS(int idInicial) {
+        if (!almacenes.containsKey(idInicial)) return;
+
+        Queue<Integer> cola = new LinkedList<>();
+        Set<Integer> visitado = new HashSet<>();
+
+        // Iniciar el BFS
+        cola.offer(idInicial);
+        visitado.add(idInicial);
+
+        System.out.println("Recorrido BFS desde " + almacenes.get(idInicial) + ":");
+        while (!cola.isEmpty()) {
+            int id = cola.poll();
+            System.out.print(almacenes.get(id) + " -> ");
+
+            // Explorar vecinos no visitados
+            for (int vecino : listaAdyacencia.get(id)) {
+                if (!visitado.contains(vecino)) {
+                    visitado.add(vecino);
+                    cola.offer(vecino);
+                }
+            }
+        }
+        System.out.println(); // Nueva línea al finalizar el recorrido
+    }
+}
+
+public class actividad123 {
+    public static void main(String[] args) {
+        Grafo grafo = new Grafo();
+
+        // Agregar almacenes al grafo
+        grafo.agregarAlmacen(1, "Almacén Central");
+        grafo.agregarAlmacen(2, "Almacén Norte");
+        grafo.agregarAlmacen(3, "Almacén Sur");
+        grafo.agregarAlmacen(4, "Almacén Este");
+        grafo.agregarAlmacen(5, "Almacén Oeste");
+
+        // Conectar almacenes entre sí
+        grafo.conectarAlmacenes(1, 2);
+        grafo.conectarAlmacenes(1, 3);
+        grafo.conectarAlmacenes(2, 4);
+        grafo.conectarAlmacenes(3, 5);
+        grafo.conectarAlmacenes(4, 5);
+
+        // Realizar recorridos desde el almacén central (ID 1)
+        grafo.DFS(1);
+        grafo.BFS(1);
+    }
+}
