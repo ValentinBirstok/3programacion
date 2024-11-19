@@ -40,4 +40,3 @@ public class actividad142 {
         }
         return true;
     }
-    
