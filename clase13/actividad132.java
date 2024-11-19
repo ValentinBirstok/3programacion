@@ -30,4 +30,38 @@ class Grafo {
     public int obtenerCosto(String origen, String destino) {
         return adyacencia.get(origen).get(destino);
     }
+}   
+class ColaPrioridad {
+    private PriorityQueue<Nodo> cola;
+
+    // Constructor de la cola de prioridad
+    public ColaPrioridad() {
+        cola = new PriorityQueue<>(Comparator.comparingInt(n -> n.costo));
+    }
+
+    // Insertar un nodo con un costo
+    public void insertar(String nodo, int costo) {
+        cola.add(new Nodo(nodo, costo));
+    }
+
+    // Extraer el nodo con el menor costo
+    public Nodo extraerMin() {
+        return cola.poll();
+    }
+
+    // Verificar si la cola está vacía
+    public boolean estaVacia() {
+        return cola.isEmpty();
+    }
+
+    // Clase Nodo
+    static class Nodo {
+        String nombre;
+        int costo;
+
+        Nodo(String nombre, int costo) {
+            this.nombre = nombre;
+            this.costo = costo;
+        }
+    }
 }
