@@ -43,6 +43,33 @@ public class actividad113 {
             }
             return;
         }
+        // Recorrer todas las posibles columnas para la computadora en la fila actual
+        for (int colComputadora = 0; colComputadora < N; colComputadora++) {
+            if (esPosicionValida(tablero, filaComputadora, colComputadora, 1)) {
+                // Colocar la computadora en la posición válida
+                tablero[filaComputadora][colComputadora] = 1;
+                // Intentar colocar la siguiente computadora en la fila siguiente
+                colocarComputadorasEImpresoras(tablero, filaComputadora + 1, filaImpresora);
+                // Retirar la computadora para probar otra posición
+                tablero[filaComputadora][colComputadora] = 0;
+            }
+        }
+    }
 
-    
-}}
+    // Verificar si una posición es válida para colocar un elemento (computadora o impresora)
+    private static boolean esPosicionValida(int[][] tablero, int fila, int columna, int tipoElemento) {
+        // Verificar la fila y la columna para el tipo de elemento
+        for (int i = 0; i < N; i++) {
+            // Evitar la misma fila y la misma columna para computadoras o impresoras
+            if (tablero[fila][i] == tipoElemento || tablero[i][columna] == tipoElemento) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[][] tablero = new int[N][N]; // Inicializar la oficina vacía
+        colocarComputadorasEImpresoras(tablero, 0, 0); // Iniciar la búsqueda de soluciones
+    }
+}
